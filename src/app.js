@@ -5,6 +5,7 @@ const app = express()
 const index = require("./routes/index")
 const alunas = require("./routes/alunasRoute")
 const professoras = require("./routes/professorasRoute")
+const session = require('./routes/sessionRoute');
 
 app.use(express.json());
 
@@ -20,5 +21,7 @@ app.use(function(req, res, next) {
 app.use("/", index)
 app.use("/alunas", alunas)
 app.use("/professoras", professoras)
+app.use("/sessions", session);
+
 
 module.exports = app
